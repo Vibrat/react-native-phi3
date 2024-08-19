@@ -6,20 +6,21 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const EnglePhi3 = NativeModules.EnglePhi3 ? NativeModules.EnglePhi3
+const EnglePhi3 = NativeModules.EnglePhi3
+  ? NativeModules.EnglePhi3
   : new Proxy(
-    {},
-    {
-      get() {
-        throw new Error(LINKING_ERROR);
-      },
-    }
-  );
+      {},
+      {
+        get() {
+          throw new Error(LINKING_ERROR);
+        },
+      }
+    );
 
 export function ask(text: string): Promise<string> {
-  return EnglePhi3.ask(text)
+  return EnglePhi3.ask(text);
 }
 
-export function init(): Promise<boolean> {
-  return EnglePhi3.init("model_path")
+export function init(path: string): Promise<boolean> {
+  return EnglePhi3.init(path);
 }

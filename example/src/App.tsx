@@ -2,41 +2,46 @@ import { useState } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import { ask, init } from 'react-native-phi3';
 
-export default function App() {
+const MODEL_DIRECTORY = 'model_path';
 
-  const [phi3Result, setPhi3Result] = useState<string | undefined>()
-  const [phi3Loaded, setPhi3Loaded] = useState<boolean>(false)
+export default function App() {
+  const [phi3Result, setPhi3Result] = useState<string | undefined>();
+  const [phi3Loaded, setPhi3Loaded] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>
-      <Text>Phi3 Loaded: {phi3Loaded ? "Yes" : "No"}</Text>
+      <Text>Phi3 Loaded: {phi3Loaded ? 'Yes' : 'No'}</Text>
       <Text>Phi3 Response: {phi3Result}</Text>
       <Button
         onPress={() => {
-          init().then((success: boolean) => {
-            setPhi3Loaded(success)
-          }).catch((error: any) => {
-            console.info(
-              `Error while init the model, Please make sure you path points to the correct model path.
+          init(MODEL_DIRECTORY)
+            .then((success: boolean) => {
+              setPhi3Loaded(success);
+            })
+            .catch((error: any) => {
+              console.info(
+                `Error while init the model, Please make sure you path points to the correct model path.
 You can download the model here: https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx/tree/main/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4
-`, 
-            )
-            console.info(error.message)
-            // console.info(error.stack)
-            console.info(error.userInfo)
-          })
+`
+              );
+              console.info(error.message);
+              // console.info(error.stack)
+              console.info(error.userInfo);
+            });
         }}
-        title='Start Loading model'
+        title="Start Loading model"
       />
       <Button
         disabled={!phi3Loaded}
         onPress={() => {
-          console.info("doing something here")
-          ask("hello").then(setPhi3Result).catch(error => {
-            console.info("unable to inference information ", error)
-          })
+          console.info('doing something here');
+          ask('hello')
+            .then(setPhi3Result)
+            .catch((error) => {
+              console.info('unable to inference information ', error);
+            });
         }}
-        title='Running text for Phi3'
+        title="Running text for Phi3"
       />
     </View>
   );
