@@ -39,7 +39,7 @@ const App = () {
         <View>
             <Text>Your model is loaded: {mLoaded}</Text>
             <Button title={"Ask"} onPress={ async () => { 
-                const results = awaitask("Can you tell me a joke");
+                const results = await ask("Can you tell me a joke");
                 console.info(results);
                 }}/>
         </View>
@@ -47,6 +47,8 @@ const App = () {
 }
 
 ```
+
+A full setup to download assets and running inference is available [here](https://github.com/Vibrat/react-native-phi3/tree/main/example)
 
 ## Contributing
 
