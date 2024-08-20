@@ -908,7 +908,7 @@ PODS:
   - React-Mapbuffer (0.74.5):
     - glog
     - React-debug
-  - react-native-phi3 (0.1.1):
+  - react-native-phi3 (0.1.2):
     - DoubleConversion
     - glog
     - onnxruntime-c
@@ -1168,6 +1168,10 @@ PODS:
     - React-Core
     - React-jsi
   - ReactTestApp-Resources (1.0.0-dev)
+  - rn-fetch-blob (0.12.0):
+    - React-Core
+  - RNFS (2.20.0):
+    - React-Core
   - SocketRocket (0.7.0)
   - Yoga (0.0.0)
 
@@ -1229,6 +1233,8 @@ DEPENDENCIES:
   - "ReactNativeHost (from `../node_modules/@rnx-kit/react-native-host`)"
   - ReactTestApp-DevSupport (from `../node_modules/react-native-test-app`)
   - ReactTestApp-Resources (from `..`)
+  - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
+  - RNFS (from `../node_modules/react-native-fs`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1347,6 +1353,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-test-app"
   ReactTestApp-Resources:
     :path: ".."
+  rn-fetch-blob:
+    :path: "../node_modules/rn-fetch-blob"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1381,7 +1391,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 3b6060bbf5317663667e1dd93560c7943ab86ccc
   React-logger: 257858bd55f3a4e1bc0cf07ddc8fb9faba6f8c7c
   React-Mapbuffer: 6c1cacdbf40b531f549eba249e531a7d0bfd8e7f
-  react-native-phi3: 5f16cc518f6b0ab9281f1c49b10e5839e04efe64
+  react-native-phi3: e9cc6eeca115da3d19efd5f19c1f525b1a01ed15
   React-nativeconfig: ba9a2e54e2f0882cf7882698825052793ed4c851
   React-NativeModulesApple: 374d2a7da3657bd284ffa024449ae01c804ca8da
   React-perflogger: ed4e0c65781521e0424f2e5e40b40cc7879d737e
@@ -1407,6 +1417,8 @@ SPEC CHECKSUMS:
   ReactNativeHost: 4983b4bfdef9f1a67f523b633909df57a9c1dae9
   ReactTestApp-DevSupport: cbe23c1d1999516afa35e9758ef400b6bd3f7046
   ReactTestApp-Resources: 857244f3a23f2b3157b364fa06cf3e8866deff9c
+  rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: 950bbfd7e6f04790fdb51149ed51df41f329fcc8
 
