@@ -41,6 +41,7 @@ bool EngleOnnx::init(const std::string &directory)
     else
     {
         std::cerr << "Instance of Phi3 model already exist" << std::endl;
+        return true;
     }
     return false;
 }
